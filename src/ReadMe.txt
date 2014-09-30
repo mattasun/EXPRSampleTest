@@ -17,3 +17,6 @@ The code package ExpressSampleTest includes a java file ExpressDigitalFileProces
 java class that takes the path to the file location as input. This input can be passed either from the 
 command line or you can mention the path to file location in java file ExpressDigitalFileProcessor. Finally this program
 prints all the numeric account numbers as a map with validity flag.
+
+The test file is located at com.express as testFile.txt.
+The above program ExpressDigitalFileProcessor has been executed using the above testFile.txt as reference
