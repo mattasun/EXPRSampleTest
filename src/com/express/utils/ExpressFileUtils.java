@@ -6,9 +6,8 @@ import com.express.constants.DigitConstants;
 import com.express.constants.DigitConverter;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * This class contains all Utility methods for parsing input file
@@ -65,10 +64,10 @@ public class ExpressFileUtils {
      * @param accountNumbers
      * @return
      */
-    public static Map<String,Boolean> parseAccountNumbers(List<AccountNumber> accountNumbers) {
-        Map<String,Boolean> actualAcctNumbers = new HashMap<String,Boolean>();
+    public static LinkedHashMap<String,Boolean> parseAccountNumbers(List<AccountNumber> accountNumbers) {
+        LinkedHashMap<String,Boolean> actualAcctNumbers = new LinkedHashMap<String, Boolean>();
         for(AccountNumber accountNumber:accountNumbers){
-            StringBuffer accountString = new StringBuffer();
+            StringBuilder accountString = new StringBuilder();
             List<Digit> digits = accountNumber.getDigits();
             int checksum = 9;
             int checksumCount = 0;

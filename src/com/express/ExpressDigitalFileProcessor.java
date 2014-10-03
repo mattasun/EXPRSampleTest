@@ -9,9 +9,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * This class reads the file at a location and parses the digits in the file. This class prints all the digits in the
@@ -31,7 +30,6 @@ public class ExpressDigitalFileProcessor {
         int skipRow = -1;
         int lineCounter = -1;
         List<AccountNumber> accountNumbers = new ArrayList<AccountNumber>();
-        Map<String,Boolean> actualAccountNumbers = new HashMap<String,Boolean>();
         AccountNumber accountNumber = null;
         try {
             String sCurrentLine = null;
@@ -85,7 +83,7 @@ public class ExpressDigitalFileProcessor {
                 }
                 //parse the digital account numbers to numeric
                 System.out.println("No: of Account Numbers in the file" + accountNumbers.size());
-                actualAccountNumbers = ExpressFileUtils.parseAccountNumbers(accountNumbers);
+                LinkedHashMap<String,Boolean> actualAccountNumbers = ExpressFileUtils.parseAccountNumbers(accountNumbers);
                 System.out.println("Account Number and Validity Flag");
                 System.out.println(actualAccountNumbers.toString());
             } catch (IOException ex) {
